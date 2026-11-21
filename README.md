@@ -1,86 +1,86 @@
-# 🛒 VKİ Tabanlı Akıllı Market Yönlendirme Sistemi
+# 🛒 BMI-Based Smart Grocery Routing System
 
 ![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
 ![.NET](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
 ![Windows Forms](https://img.shields.io/badge/Windows%20Forms-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 
-Kullanıcıların boy ve kilo bilgilerine göre **Vücut Kitle İndeksini (VKİ)** hesaplayan, çıkan sonuca göre sağlık durumunu analiz ederek kişiye özel market reyonları öneren ve seçilen reyonlarda sepet, vergi ve ödeme işlemlerini gerçekleştiren **C# Windows Forms** masaüstü uygulamasıdır.
+A **C# Windows Forms** desktop application that calculates a user's **Body Mass Index (BMI)** from height and weight inputs, evaluates their health category, recommends tailored grocery aisles, and handles cart, tax, and checkout workflows.
 
 ---
 
-## 🖥️ Uygulama Ekranları ve Akış
+## 🖥️ Application Screens & Workflow
 
-### 1. Giriş ve VKİ Hesaplama Ekranı
-Kullanıcı santimetre (cm) cinsinden boyunu ve kilogram cinsinden kilosunu girerek **HESAPLA** butonuna tıklar. Sistem VKİ değerini otomatik olarak hesaplar ve ilgili sonuç ekranına yönlendirir.
+### 1. Home & BMI Calculation Screen
+Users enter their height in centimeters (cm) and weight in kilograms (kg), then click **Calculate** (`HESAPLA`)[cite: 6]. The system computes the BMI value and navigates to the corresponding evaluation screen.
 
 <p align="center">
-  <img src="giriş.png" alt="VKİ Hesaplama Giriş Ekranı" width="700">
-</p>
-
----
-
-### 2. VKİ Analizi ve Reyon Yönlendirme Ekranları
-Hesaplanan VKİ değerine göre sistem kullanıcıyı **Zayıf**, **Normal Kilolu** veya **Fazla Kilolu** kategorilerinden birine yerleştirir, sağlık önerisinde bulunur ve hedefine uygun reyon seçeneklerini sunar:
-
-* **Zayıf Aralığı:** Sağlıklı kilo almak veya ayırt etmeden kilo almak için uygun reyonlara yönlendirir.
-<p align="center">
-  <img src="zayıf.png" alt="Zayıf VKİ Sonuç Ekranı" width="700">
-</p>
-
-* **Normal Kilolu Aralığı:** Formu korumak, sağlıklı kilo almak veya kas kütlesi artırmak için reyon seçenekleri sunar.
-<p align="center">
-  <img src="normal.png" alt="Normal Kilolu VKİ Sonuç Ekranı" width="700">
-</p>
-
-* **Fazla Kilolu Aralığı:** Kilo verme önerisiyle birlikte düşük kalorili ve dengeli reyon seçeneklerini listeler.
-<p align="center">
-  <img src="fazlakilolu.png" alt="Fazla Kilolu VKİ Sonuç Ekranı" width="700">
+  <img src="giriş.png" alt="BMI Calculation Home Screen" width="700">
 </p>
 
 ---
 
-### 3. Market Reyonları ve Alışveriş Ekranları
-Kullanıcı kendisine önerilen **5 farklı reyondan** birini seçtiğinde ilgili reyon penceresi açılır. Her reyonda o kategoriye özel ürünler ve birim fiyatları listelenir. Kullanıcı ürünleri sepetine ekleyebilir, **HESAPLA** butonu ile ara toplamı görebilir, **ÖDEME YAP** butonu ile vergi dahil net tutarı hesaplayıp ödemesini tamamlayabilir. Sol üstteki geri butonu ile bir önceki menüye dönülerek diğer reyonlardan da alışveriş yapılabilir.
+### 2. BMI Evaluation & Aisle Recommendation Screens
+Based on the calculated BMI, the system classifies the user into **Underweight**, **Normal Weight**, or **Overweight**, provides health guidance, and lists recommended grocery aisles aligned with their goals:
 
-#### 🥗 Sağlıklı Ürünler Reyonu
+* **Underweight Category:** Recommends aisles tailored for healthy or general weight gain[cite: 12].
 <p align="center">
-  <img src="sağlıklıürünreyonu.png" alt="Sağlıklı Ürünler Reyonu" width="700">
+  <img src="zayıf.png" alt="Underweight BMI Result Screen" width="700">
 </p>
 
-#### 🧀 Gıda Ürünleri Reyonu
+* **Normal Weight Category:** Offers aisle selections focused on weight maintenance, healthy weight gain, or muscle mass building[cite: 8].
 <p align="center">
-  <img src="gıdareyonu.png" alt="Gıda Ürünleri Reyonu" width="700">
+  <img src="normal.png" alt="Normal Weight BMI Result Screen" width="700">
 </p>
 
-#### 💪 Protein Ağırlıklı Ürünler Reyonu
+* **Overweight Category:** Provides weight-loss recommendations alongside low-calorie, balanced aisle options[cite: 4].
 <p align="center">
-  <img src="proteinliürünreyonu.png" alt="Protein Ağırlıklı Ürünler Reyonu" width="700">
-</p>
-
-#### 🍎 Meyveler Reyonu
-<p align="center">
-  <img src="meyvereyonu.png" alt="Meyveler Reyonu" width="700">
-</p>
-
-#### 🥦 Sebzeler Reyonu
-<p align="center">
-  <img src="sebzereyonu.png" alt="Sebzeler Reyonu" width="700">
+  <img src="fazlakilolu.png" alt="Overweight BMI Result Screen" width="700">
 </p>
 
 ---
 
-## ✨ Özellikler
+### 3. Grocery Aisles & Shopping Screens
+Selecting any of the **5 specialized aisles** opens the corresponding store window displaying category-specific products and unit prices[cite: 5, 7, 9, 10, 11]. Users can add items to their cart, view the subtotal via **Calculate** (`HESAPLA`), and finalize the transaction with tax calculation via **Pay** (`ÖDEME YAP`)[cite: 5, 7, 9, 10, 11]. The back button in the top-left corner allows returning to the previous menu to shop across multiple aisles[cite: 5, 7, 9, 10, 11].
 
-* **Otomatik VKİ Hesaplama ve Sınıflandırma:** Boy ve kilo verileriyle VKİ hesaplama; Zayıf, Normal ve Fazla Kilolu aralıklarına göre dinamik geri bildirim.
-* **Kişiselleştirilmiş Reyon Önerisi:** Kullanıcının VKİ aralığına ve hedefine uygun **5 farklı reyon** (*Sağlıklı Ürünler, Gıda Ürünleri, Protein Ağırlıklı Ürünler, Meyveler, Sebzeler*) arasında yönlendirme.
-* **Dinamik Sepet ve Fiyat Hesaplama:** Reyon içerisinden ürün seçimi, anlık sepet listeleme ve toplam tutar hesaplama.
-* **Vergi ve Ödeme Sistemi:** Sepet tutarı üzerinden otomatik vergi hesaplama, net toplam gösterimi ve ödeme onay bildirimi.
-* **Çoklu Reyon Gezinmesi:** Geri dönme butonu sayesinde önceki menüye dönüp farklı reyonlardan alışverişe devam edebilme.
+#### 🥗 Healthy Products Aisle
+<p align="center">
+  <img src="sağlıklıürünreyonu.png" alt="Healthy Products Aisle" width="700">
+</p>
+
+#### 🧀 General Food Aisle
+<p align="center">
+  <img src="gıdareyonu.png" alt="General Food Aisle" width="700">
+</p>
+
+#### 💪 High-Protein Products Aisle
+<p align="center">
+  <img src="proteinliürünreyonu.png" alt="High-Protein Products Aisle" width="700">
+</p>
+
+#### 🍎 Fruits Aisle
+<p align="center">
+  <img src="meyvereyonu.png" alt="Fruits Aisle" width="700">
+</p>
+
+#### 🥦 Vegetables Aisle
+<p align="center">
+  <img src="sebzereyonu.png" alt="Vegetables Aisle" width="700">
+</p>
 
 ---
 
-## 🛠️ Kullanılan Teknolojiler
+## ✨ Features
 
-* **Dil:** C#
-* **Arayüz:** Windows Forms (WinForms)
-* **Geliştirme Ortamı:** Visual Studio
+* **Automated BMI Calculation & Classification:** Computes BMI from height and weight data, providing tailored feedback for Underweight, Normal, and Overweight ranges[cite: 4, 8, 12].
+* **Personalized Aisle Routing:** Directs users to **5 distinct grocery aisles** (*Healthy Products, General Food, High-Protein Products, Fruits, Vegetables*) based on their BMI category and goals[cite: 5, 7, 9, 10, 11].
+* **Dynamic Cart & Subtotal Calculation:** Interactive product selection, live cart listing, and subtotal computation[cite: 5, 7, 9, 10, 11].
+* **Tax & Checkout Processing:** Automated tax calculation on cart subtotals, net total display, and payment confirmation dialog[cite: 5, 7, 9, 11].
+* **Multi-Aisle Navigation:** Dedicated back navigation enabling users to return to the recommendation menu and continue shopping in other aisles[cite: 5, 7, 9, 10, 11].
+
+---
+
+## 🛠️ Tech Stack
+
+* **Language:** C#
+* **UI Framework:** Windows Forms (WinForms)
+* **IDE:** Visual Studio
