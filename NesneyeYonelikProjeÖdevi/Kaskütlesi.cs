@@ -192,6 +192,12 @@ namespace NesneyeYonelikProjeÖdevi
             {
                 label8.Text = Vergi().ToString("N2");
                 label10.Text = VergiliFiyat().ToString("N2");
+                MessageBox.Show("Ödeme yapıldı.", "Bildirim", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                label8.Text = "0";
+                label10.Text = "0";
+                label2.Text = "0";
+                listBox5.Items.Clear();
+                listBox4.Items.Clear();
             }
         }
     }
